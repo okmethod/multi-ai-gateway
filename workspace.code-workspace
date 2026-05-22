@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "docs"
+		},
+		{
+			"path": "apps/hono-server"
+		},
+	],
+	"settings": {
+		// 全ワークスペース共通: Makefile はタブインデント
+		"[makefile]": {
+			"editor.insertSpaces": false,
+			"editor.detectIndentation": false
+		},
+		// 全ワークスペース共通: Markdown は Prettier でフォーマット
+		"[markdown]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+  // ルートフォルダ固有: エクスプローラーで docs / apps を非表示
+  "files.exclude": {
+    "docs": true,
+    "apps": true,
+  },
+}

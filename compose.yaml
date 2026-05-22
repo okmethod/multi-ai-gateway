@@ -1,0 +1,19 @@
+services:
+  hono-server:
+    image: node:24.15.0-slim
+    ports:
+      - "8787:8787"
+    environment:
+      - AI_GATEWAY_KEY=${AI_GATEWAY_KEY}
+      - CORS_ORIGIN=http://localhost:5173
+      - GEMINI_MODEL_NAME=gemini-2.0-flash
+      - CLAUDE_MODEL_NAME=claude-3.5-sonnet
+      - GROQ_MODEL_NAME=mixtral-8x7b-32768
+    volumes:
+      - ./apps/hono-server:/app/hono-server
+      - hono-server-node-modules:/app/hono-server/node_modules
+    working_dir: /app/hono-server
+    command: sh -c "npm install && wrangler deploy --local"
+
+volumes:
+  hono-server-node-modules:
