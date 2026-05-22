@@ -1,0 +1,33 @@
+{
+  "name": "hono-server",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "put-secret-app": "grep '^APP_SECRET=' .env | cut -d'=' -f2- | wrangler secret put APP_SECRET",
+    "put-secret-gateway-url": "grep '^AI_GATEWAY_BASE_URL=' .env | cut -d'=' -f2- | wrangler secret put AI_GATEWAY_BASE_URL",
+    "put-secret-gateway-token": "grep '^AI_GATEWAY_TOKEN=' .env | cut -d'=' -f2- | wrangler secret put AI_GATEWAY_TOKEN",
+    "put-secrets": "npm run put-secret-app && npm run put-secret-gateway-url && npm run put-secret-gateway-token",
+    "check": "tsc --noEmit",
+    "format": "prettier --write src tests",
+    "lint": "prettier --check src tests && eslint src tests && npm run check",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "hono": "^4.6.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "@types/chai": "^5.2.3",
+    "eslint": "^9.39.4",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.58.0",
+    "vitest": "^4.1.4",
+    "wrangler": "^4.85.0"
+  }
+}

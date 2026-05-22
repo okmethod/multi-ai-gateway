@@ -1,0 +1,14 @@
+name = "hono-server"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+[vars]
+GEMINI_MODEL = "gemini-2.5-flash"
+CLAUDE_MODEL = "claude-haiku-4-5-20251001"
+GROQ_MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
+ALLOWED_ORIGINS = "https://okmethod.github.io,http://localhost:5173"
+
+# wrangler secret put で設定:
+# APP_SECRET
+# AI_GATEWAY_BASE_URL
+# AI_GATEWAY_TOKEN
