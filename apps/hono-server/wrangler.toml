@@ -1,4 +1,4 @@
-name = "hono-server"
+name = "multi-ai-gateway"
 main = "src/index.ts"
 compatibility_date = "2024-12-01"
 
